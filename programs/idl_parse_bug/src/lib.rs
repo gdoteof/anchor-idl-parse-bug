@@ -11,7 +11,15 @@ declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
 pub mod idl_parse_bug {
     use super::*;
 
+    pub fn initialize(_ctx: Context<Initialize>) -> ProgramResult {
+        Ok(())
+    }
+
     pub fn foo(ctx: Context<FooContext>) -> ProgramResult {
         instructions::foo::handler(ctx)
     }
 }
+
+
+#[derive(Accounts)]
+pub struct Initialize {}
